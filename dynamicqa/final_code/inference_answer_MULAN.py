@@ -51,13 +51,16 @@ class inference():
 
     def load_data(self):
         if self.args.mode == "mutable":
-            data = pd.read_csv("../Data/Mutable_final.csv", index_col=0)
+            # data = pd.read_csv("../Data/Mutable_final.csv", index_col=0)
+            data = pd.read_parquet("../Data/Mutable_MULAN_2500.parquet")
 
         elif self.args.mode == "immutable":
-            data = pd.read_csv("../Data/Immutable_final.csv", index_col=0)
+            # data = pd.read_csv("../Data/Immutable_final.csv", index_col=0)
+            data = pd.read_parquet("../Data/Immutable_MULAN_2500.parquet")
 
         elif self.args.mode == "immutable_n":
-            data = pd.read_csv("../Data/N_immutable_final.csv", index_col=0)
+            # data = pd.read_csv("../Data/N_immutable_final.csv", index_col=0)
+            data = pd.read_parquet("../Data/N_Immutable_MULAN_2500.parquet")
 
         return data
 
@@ -71,9 +74,9 @@ class inference():
 
         # to save output
         if self.args.context:
-            filename = "../Output/%s/%s_%s_context.json" % (self.args.mode,self.args.mode, self.args.model_name.split("/")[-1])
+            filename = "../CP_Output/%s/%s_%s_context.json" % (self.args.mode,self.args.mode, self.args.model_name.split("/")[-1])
         else:
-            filename = "../Output/%s/%s_%s_q_only.json" % (self.args.mode,self.args.mode, self.args.model_name.split("/")[-1])
+            filename = "../CP_Output/%s/%s_%s_q_only.json" % (self.args.mode,self.args.mode, self.args.model_name.split("/")[-1])
 
         json.dump(output_list, open(filename, "w"), indent=4)
 
@@ -183,7 +186,7 @@ class inference():
                 generated_ids = self.model.generate(encoded, max_new_tokens=20, do_sample=True)
                 decoded = self.tokenizer.batch_decode(generated_ids)
                 # debug
-                print(f"{decoded=}")
+                # print(f"{decoded=}")
 
                 if "mistral" in self.args.model_name:
                     result = re.search(".*\[\/INST\](.*)</s>", decoded[0])

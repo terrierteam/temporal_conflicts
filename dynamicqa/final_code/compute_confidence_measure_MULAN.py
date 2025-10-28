@@ -2,7 +2,7 @@ import argparse
 import os
 import pickle
 import random
-
+import json
 import config
 import numpy as np
 import torch
@@ -145,7 +145,7 @@ def get_margin_probability_uncertainty_measure(log_likelihoods):
 
 def get_sem_sims():
     to_release = []
-    with open(f"../Output/sequences/{args.dataset}/{args.dataset}_{model_name}_persuasion_output.pkl", "rb") as f:
+    with open(f"../CP_Output/sequences/{args.dataset}/{args.dataset}_{model_name}_persuasion_output.pkl", "rb") as f:
         out = pickle.load(f)
     for sample in out:
         interim = [k.split('-') for k in sample[sim_key]]
@@ -181,7 +181,9 @@ if __name__ == '__main__':
 
     # else:
     #     dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
-    dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
+    # dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
+    # dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
+    dataset = pd.read_parquet(f"../Data/{args.dataset.title()}_MULAN_2500.parquet").set_index("id")
         
     gen_key = 'answers_c_and_q' if args.add_context else 'answers_q_only'
     sim_key = 'clusters_c_and_q' if args.add_context else 'clusters_q_only'
@@ -203,7 +205,7 @@ if __name__ == '__main__':
 
     list_of_results = []
 
-    with open(f"../Output/sequences/{args.dataset}/{args.dataset}_{model_name}_{args.add_context}_{args.use_original_context}_generations_likelihoods_0.pkl", "rb") as infile:
+    with open(f"../CP_Output/sequences/{args.dataset}/{args.dataset}_{model_name}_{args.add_context}_{args.use_original_context}_generations_likelihoods_0.pkl", "rb") as infile:
         sequences = pickle.load(infile)
         list_of_results.append((args.generation_model, sequences))
         
@@ -293,4 +295,16 @@ if __name__ == '__main__':
     if args.verbose:
         print("Avg normalized SE: ", predictive_entropy_over_concepts.mean())
         print("Avg unnormalized SE: ", unnormalised_entropy_over_concepts.mean())
+
+        summary_path = f"../{config.output_dir}/{model_name}_{args.dataset}_{args.use_original_context}_{file_out_type}_semanticentropy_MULAN_summary.json"
+        with open(summary_path, "w") as jf:
+            json.dump(
+                {
+                    "avg_normalized_SE": predictive_entropy_over_concepts.mean().item(),
+                    "avg_unnormalized_SE": unnormalised_entropy_over_concepts.mean().item(),
+                },
+                jf,
+                indent=4,
+            )
+        print(f"Saved summary stats to {summary_path}")
         

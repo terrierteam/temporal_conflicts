@@ -190,7 +190,7 @@ if __name__ == '__main__':
 
     model_name = args.evaluation_model.split('/')[1]#.split('-') #[0]
 
-    with open(f"../Output/sequences/{args.dataset}/{args.dataset}_{model_name}_persuasion_output.pkl", "rb") as f:
+    with open(f"../CP_Output/sequences/{args.dataset}/{args.dataset}_{model_name}_persuasion_output.pkl", "rb") as f:
         out = pickle.load(f)
         
     ### FOR DEBUG
@@ -201,7 +201,8 @@ if __name__ == '__main__':
     # else:
     #     dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
 
-    dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
+    # dataset = pd.read_csv(f"../Data/{args.dataset.title()}_final.csv", index_col='id') #.iloc[:10]
+    dataset = pd.read_parquet(f"../Data/{args.dataset.title()}_MULAN_2500.parquet").set_index("id")
 
 
     gen_key = 'answers_c_and_q' if args.add_context else 'answers_q_only'
@@ -211,7 +212,7 @@ if __name__ == '__main__':
 
     ans_key = 'context' if args.add_context else 'q_only'
 
-    with open(f"../Output/sequences/{args.dataset}/{args.dataset}_{model_name}_{ans_key}.json", "rb") as f:
+    with open(f"../CP_Output/sequences/{args.dataset}/{args.dataset}_{model_name}_{ans_key}.json", "rb") as f:
         answers_output = json.load(f)
         
     # pdb.set_trace()

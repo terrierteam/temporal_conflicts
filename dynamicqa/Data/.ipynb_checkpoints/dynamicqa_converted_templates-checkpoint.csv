@@ -1,0 +1,81 @@
+﻿relation,question,statement
+D1,What is [X]'s occupation?,[X]'s occupation is [Y].
+D1,What is [X]'s occupation?,[X] has the occupation of [Y].
+D1,What is [X]'s occupation?,[X] works as a [Y].
+D1,What is [X]'s occupation?,The job of [X] is [Y].
+D1,What is [X]'s occupation?,"By occupation, [X] is a [Y]."
+D2,In what city was [X] born?,[X] was born in the city of [Y].
+D2,In what city was [X] born?,The birthplace city of [X] is [Y].
+D2,In what city was [X] born?,The city where [X] was born is [Y].
+D2,In what city was [X] born?,[X]’s city of birth is [Y].
+D2,In what city was [X] born?,[X] was born in a city named [Y].
+D3,What genre is [X]?,[X] belongs to the genre [Y].
+D3,What genre is [X]?,The genre of [X] is [Y].
+D3,What genre is [X]?,[X] is categorized in the genre [Y].
+D3,What genre is [X]?,The genre associated with [X] is [Y].
+D3,What genre is [X]?,[X] is categorized in the genre [Y].
+D4,Who is the father of [X]?,[X]’s father is [Y].
+D4,Who is the father of [X]?,The father of [X] is [Y].
+D4,Who is the father of [X]?,The person who is the father of [X] is [Y].
+D4,Who is the father of [X]?,The dad of [X] is [Y].
+D4,Who is the father of [X]?,[X]'s dad is [Y].
+D5,In what country is [X]?,[X] is located in the country of [Y].
+D5,In what country is [X]?,[X] is in the country of [Y].
+D5,In what country is [X]?,[X] is situated within the country of [Y].
+D5,In what country is [X]?,[X] belongs to the country of [Y].
+D5,In what country is [X]?,[X] can be found in the country of [Y].
+D6,Who was the producer of [X]?,[X] was produced by [Y].
+D6,Who was the producer of [X]?,The producer of [X] was [Y].
+D6,Who was the producer of [X]?,The person who produced [X] was [Y].
+D6,Who was the producer of [X]?,The producer responsible for [X] is [Y].
+D6,Who was the producer of [X]?,The producer credited for [X] is [Y].
+D7,Who was the director of [X]?,[X] was directed by [Y].
+D7,Who was the director of [X]?,[X]’s director was [Y].
+D7,Who was the director of [X]?,The director of [X] was [Y].
+D7,Who was the director of [X]?,The one who directed [X] was [Y].
+D7,Who was the director of [X]?,The individual directing [X] was [Y].
+D8,What is [X] the capital of?,[X] is the capital of [Y].
+D8,What is [X] the capital of?,[X] serves as the capital of [Y].
+D8,What is [X] the capital of?,It is [X] that is the capital of [Y].
+D8,What is [X] the capital of?,The city called [X] is the capital of [Y].
+D8,What is [X] the capital of?,[X] is recognized as the capital city of [Y].
+D9,Who was the screenwriter for [X]?,[X]’s screenwriter was [Y].
+D9,Who was the screenwriter for [X]?,The screenwriter for [X] was [Y].
+D9,Who was the screenwriter for [X]?,[X]’s screenplay was written by [Y].
+D9,Who was the screenwriter for [X]?,The screenwriter responsible for [X] was [Y].
+D9,Who was the screenwriter for [X]?,The screenwriter credited for [X] was [Y].
+D10,Who was the composer of [X]?,[X] was composed by [Y].
+D10,Who was the composer of [X]?,[X]’s composer was [Y].
+D10,Who was the composer of [X]?,The composer of [X] was [Y].
+D10,Who was the composer of [X]?,The composition of [X] is credited to [Y].
+D10,Who was the composer of [X]?,Credit for composing [X] goes to [Y].
+D11,What color is [X]?,The color of [X] is [Y].
+D11,What color is [X]?,[X] is of the color [Y].
+D11,What color is [X]?,[X] is characterized by the color [Y].
+D11,What color is [X]?,[X] has a color of [Y].
+D11,What color is [X]?,[X]'s color is [Y].
+D12,What is the religion of [X]?,[X] follows the religion of [Y].
+D12,What is the religion of [X]?,[X]'s religious affiliation is [Y].
+D12,What is the religion of [X]?,The religion of [X] is [Y].
+D12,What is the religion of [X]?,[X] follows the faith of [Y].
+D12,What is the religion of [X]?,[X] is affiliated with the religious tradition of [Y].
+D13,What sport does [X] play?,[X] competes in the sport of [Y].
+D13,What sport does [X] play?,[X] plays the sport of [Y].
+D13,What sport does [X] play?,[X] is known for playing [Y].
+D13,What sport does [X] play?,[X] is active in the sport of [Y].
+D13,What sport does [X] play?,[X] participates in the sport of [Y].
+D14,Who is the author of [X]?,[X] was authored by [Y].
+D14,Who is the author of [X]?,[X] was written by [Y].
+D14,Who is the author of [X]?,The author of [X] is [Y].
+D14,Who is the author of [X]?,[X] was penned by [Y].
+D14,Who is the author of [X]?,The credit for writing [X] is commonly attributed to [Y].
+D15,Who is the mother of [X]?,[X]’s mother is [Y].
+D15,Who is the mother of [X]?,The mother of [X] is [Y].
+D15,Who is the mother of [X]?,The woman who is [X]’s mother is [Y].
+D15,Who is the mother of [X]?,[X]’s maternal parent is [Y].
+D15,Who is the mother of [X]?,The person that gave birth to [X] is [Y].
+D16,What is the capital of [X]?,The capital city of [X] is [Y].
+D16,What is the capital of [X]?,[X]'s capital city is [Y].
+D16,What is the capital of [X]?,"[X], whose the capital city is [Y]."
+D16,What is the capital of [X]?,[X] is governed from the capital city of [Y].
+D16,What is the capital of [X]?,The capital of [X] is [Y].
