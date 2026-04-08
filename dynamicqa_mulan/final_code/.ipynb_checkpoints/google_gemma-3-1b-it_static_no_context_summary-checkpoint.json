@@ -1,0 +1,6 @@
+{
+    "model": "google/gemma-3-1b-it",
+    "mode": "static",
+    "context": false,
+    "accuracy": 0.0712
+}
